@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      .ai-container {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px grey;
+        margin-top: 20px;
+      }
+      .ai-response {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px grey;
+        margin-top: 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ai-container">
+      <h3>Buzz Chat AI</h3>
+<div style="text-align:center;">
+  <img class="buzz-ai-mascot" src="https://buzzchat.site/upload/images/2023/02/lRYFhkzKP7xbDgFGtgw7_03_71aa28a2b7546e9f2d01ff4a2717d1bc_image_original.gif" alt="Buz Chat AI Mascot" style="display:inline-block;margin-top:20px;">
+  <p style="font-size:20px;">👇</p>
+</div>
+      <form>
+        <textarea id="prompt" placeholder="Let's interact. Start by saying Hello..." rows="5" cols="25" style="background-color: #f9f9f9; border: 2px solid #ccc; border-radius: 5px; padding: 10px; font-size: 16px; resize: none;"></textarea>
+        <br>
+        <button type="button" onclick="generateResponse()" style="background-color: #0077ff; color: white; padding: 10px 20px; border-radius: 25px; border: none; outline: none; font-size: 18px; cursor: pointer;">Generate Response</button>
+      </form>
+      <div id="response" class="ai-response"></div>
+    </div>
+<script>
+  function generateResponse() {
+    const prompt = document.getElementById("prompt").value;
+    let response = "";
+    if (prompt.toLowerCase().includes("hello")) {
+      let contentResponse = [
+        "It's great to have you here, what a pleasure",
+        "I am amazed to have such a personality here. How may i help you?",
+        "Did you know that it's an amazing privilege to be here. I am open to all your questions",
+        "I am Buzzy The Bee. Buzz Chat's AI System. Have you got a question for me",
+        "Howdy mate. How goes the day",
+        "Hello, how are you today?",
+        "Hi there, good to see you!",
+        "Greetings, how may I help you?",
+        "Hello, how can I make your day better?",
+        "Hey, what's on your mind today?",
+        "Hi, I'm here to assist you with anything you need.",
+        "Good day, what can I do for you today?",
+        "Hello, I hope you're having a wonderful day so far.",
+        "Greetings, it's great to see you! How can I help you today?"
+      ];
+      let randomResponse = contentResponse[Math.floor(Math.random() * contentResponse.length)];
+      response = randomResponse;
+    } else if (prompt.toLowerCase().includes("goodbye")) {
+      response = "Goodbye! Have a great day.";
+    } else if (prompt.toLowerCase().includes("create") || prompt.toLowerCase().includes("content")) {
+      let contentResponse = [
+        "When creating content for social media, it's important to consider your target audience and what type of content they are likely to engage with. You can use visuals such as images and videos, and consider using a mix of content formats such as text posts, stories, and live videos. It's also helpful to consider the best times to post your content, based on your target audience's activity on social media.",
+        "To create engaging content for social media, try to find a unique angle or perspective on a topic. You can also incorporate trending topics and events into your content, or use humor and personality to make your content stand out. Don't be afraid to experiment and try new things, as long as it aligns with your brand's voice and messaging.",
+        "When creating content for social media, it's important to have a clear call to action. This could be asking your followers to like, comment, or share your post, or encouraging them to visit your website or make a purchase. Make sure your content is visually appealing and easy to read, and use relevant hashtags to increase the visibility of your post."
+      ];
+      let randomResponse = contentResponse[Math.floor(Math.random() * contentResponse.length)];
+      response = randomResponse;
+    } else if (prompt.toLowerCase().includes("porn")) {
+      response = "That's nasty. I am not interested";
+    } else {
+      response = "I'm not sure what you mean. Can you rephrase your question?";
+    }
+    document.getElementById("response").innerHTML = response;
+  }
+</script>
+  </body>
+</html>
